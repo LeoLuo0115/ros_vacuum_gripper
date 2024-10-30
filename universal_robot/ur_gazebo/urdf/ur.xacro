@@ -87,7 +87,7 @@
   
    <!--vacuum_gripper joint and link define-->
   <joint name="gripper_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="0 3.14 1.571"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/>
     <parent link="tool0_controller"/>
     <child link="vacuum_gripper"/>
   </joint>

@@ -74,4 +74,7 @@
     <arg name="paused" value="$(arg paused)"/>
     <arg name="stopped_controllers" value="$(arg stopped_controllers)"/>
   </include>
+
+  <!-- Start rivz -->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d /home/leoluo0115/ros_ws/src/universal_robot/ur_gazebo/urdf_self_config.rviz" required="true" />
 </launch>
