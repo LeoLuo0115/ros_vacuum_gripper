@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1.3)
-project(ur10_moveit_self_config)
+project(vacuum_config)
 
 find_package(catkin REQUIRED)
 

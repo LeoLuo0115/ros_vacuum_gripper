@@ -1,12 +1,12 @@
 <package>
 
-  <name>ur10_moveit_self_config</name>
+  <name>vacuum_config</name>
   <version>0.3.0</version>
   <description>
      An automatically generated package with all the configuration and launch files for using the ur10_robot with the MoveIt Motion Planning Framework
   </description>
-  <author email="leoluo0115@gmail.com">Leo</author>
-  <maintainer email="leoluo0115@gmail.com">Leo</maintainer>
+  <author email="leoluo@gmail.com">Leo</author>
+  <maintainer email="leoluo@gmail.com">Leo</maintainer>
 
   <license>BSD</license>
 
@@ -35,7 +35,7 @@
   <!-- <run_depend>gazebo_ros_control</run_depend> -->
   <!-- This package is referenced in the warehouse launch files, but does not build out of the box at the moment. Commented the dependency until this works. -->
   <!-- <run_depend>warehouse_ros_mongo</run_depend> -->
-  <run_depend>ur_description</run_depend>
+  <run_depend>ur_gazebo</run_depend>
 
 
 </package>

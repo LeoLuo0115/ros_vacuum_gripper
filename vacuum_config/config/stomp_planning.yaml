@@ -1,5 +1,5 @@
-stomp/arm:
-  group_name: arm
+stomp/Arm:
+  group_name: Arm
   optimization:
     num_timesteps: 60
     num_iterations: 40
