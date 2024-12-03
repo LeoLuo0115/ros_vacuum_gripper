@@ -87,59 +87,6 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-    <model name='unit_box'>
-      <pose>0 0 0 0 -0 0</pose>
-      <link name='link'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>1 1 1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>1 1 1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/Red</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
     <model name='unit_box_0'>
       <pose>0 0 0 0 -0 0</pose>
       <link name='link'>
@@ -193,13 +140,11 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-
-    <!-- world define -->
     <state world_name='default'>
-      <sim_time>544 136000000</sim_time>
-      <real_time>150 636984561</real_time>
-      <wall_time>1730302602 110928810</wall_time>
-      <iterations>136521</iterations>
+      <sim_time>592 699000000</sim_time>
+      <real_time>48 744987237</real_time>
+      <wall_time>1733237892 52246935</wall_time>
+      <iterations>48563</iterations>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -210,37 +155,24 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <!-- red destination -->
-      <model name='unit_box'> 
-        <pose>1.5 0 0.05 0 -0 0</pose>
-        <scale>2 2 0.1</scale>
-        <link name='link'>
-          <pose>1.5 0 0.05 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 -9.8 -0 2.23746 -0 0</acceleration>
-          <wrench>-0 -9.8 -0 0 -0 0</wrench>
-        </link>
-      </model>
-      <!-- blue base -->
       <model name='unit_box_0'>
-        <pose>0 0 0.1 0 0 0</pose>
+        <pose>-1e-06 0 0.099997 0 -1.2e-05 0</pose>
         <scale>0.5 0.5 0.2</scale>
         <link name='link'>
-          <pose>0 0 0.1 0 0 0</pose>
+          <pose>-1e-06 0 0.099997 0 -1.2e-05 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>9.8 -0 0 -3.14159 0.90413 3.14159</acceleration>
-          <wrench>9.8 -0 0 0 -0 0</wrench>
+          <acceleration>-0.40556 -2e-06 -6.93388 -3.14159 0.914232 -3.14159</acceleration>
+          <wrench>-0.40556 -2e-06 -6.93388 0 -0 0</wrench>
         </link>
       </model>
-      <!-- green box start-->
       <model name='unit_box_1'>
         <pose>0 1 0.2 0 -0 0</pose>
         <scale>0.5 1 0.02</scale>
         <link name='link'>
           <pose>0 1 0.2 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 0 0 -1e-06 -1e-06 0</acceleration>
-          <wrench>-0 0 0 0 -0 0</wrench>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <light name='sun'>
@@ -249,7 +181,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>-8.08971 6.17747 7.90249 0 0.655643 -0.706984</pose>
+        <pose>0.660215 11.4235 8.05918 0 0.667643 -1.77898</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>

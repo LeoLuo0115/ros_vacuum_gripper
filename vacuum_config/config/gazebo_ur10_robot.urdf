@@ -178,6 +178,16 @@
             <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </actuator>
     </transmission>
+    <transmission name="vacuum_gripper_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="gripper_joint">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="vacuum_gripper_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
     <!-- links: main serial chain -->
     <link name="base_link" />
     <link name="base_link_inertia">
@@ -477,10 +487,13 @@
         <origin rpy="0 0 0" xyz="0 0 0" />
     </joint>
     <!--vacuum_gripper joint and link define-->
-    <joint name="gripper_joint" type="fixed">
+    <joint name="gripper_joint" type="revolute">
         <origin rpy="0 0 0" xyz="0 0 0.055" />
         <parent link="tool0_controller" />
         <child link="vacuum_gripper" />
+        <axis xyz="0 0 1"/>
+        <limit effort="330.0" lower="-6.283185307179586" upper="6.283185307179586" velocity="2.0943951023931953" />
+        <!-- <dynamics damping="0.0"/> -->
     </joint>
     <link name="vacuum_gripper">
         <visual>
@@ -514,8 +527,8 @@
     </gazebo>
 
     <gazebo reference="vacuum_gripper">
-        <mu1>0.2</mu1>
-        <mu2>0.2</mu2>
+        <mu1>2</mu1>
+        <mu2>2</mu2>
         <material>Gazebo/Grey</material>
     </gazebo>
 </robot>

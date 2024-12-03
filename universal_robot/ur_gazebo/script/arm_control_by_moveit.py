@@ -136,26 +136,27 @@ def main():
 		_on = rospy.ServiceProxy('/vacuum_gripper/on', Empty)
 		_off = rospy.ServiceProxy('/vacuum_gripper/off', Empty)
 
-		put_position = [[1.15,-0.225],[1.15,0.225],[0.8,-0.225],[0.8,0.225],[0.45,-0.225],[0.45,0.225]]
+		put_position = [[1,-0.15],[1.15,0.225],[0.8,-0.225],[0.8,0.225],[0.45,-0.225],[0.45,0.225]]
 		for i in range(len(put_position)):
 			# get box
 			tutorial.go_to_joint_state(joints=[1.57,-1.57,1.57,-1.57,-1.57,0])
 			# add box
-			add_box_in_sence.spawn_aruco_cubo_hover(str(i+1))
+			add_box_in_sence.spawn_aruco_cube_hover(str(i+1))
 			# exit()
-			tutorial.go_to_pose_goal([0, 1, 0.32, -pi,0,0])
-			exit()
+			tutorial.go_to_pose_goal([0, 1, 0.37, -pi,0,0])
+			# exit()
 			time.sleep(1)
 			_on()
-			time.sleep(1)
+			time.sleep(2)
 			# put box
-			tutorial.go_to_pose_goal([0.5, 0.25, 0.7, -pi/2,0,0])
-			
-			tutorial.go_to_pose_goal([put_position[i][0], put_position[i][1], 0.5, -pi/2,0,0])
-			tutorial.go_to_pose_goal([put_position[i][0], put_position[i][1], 0.126, -pi/2,0,0])
+			tutorial.go_to_pose_goal([0.5, 0.25, 0.65, -pi,0,0])
+			# dst pos
+			tutorial.go_to_pose_goal([put_position[i][0], put_position[i][1], 0.45, -pi,0,0])
+			tutorial.go_to_pose_goal([put_position[i][0], put_position[i][1], 0.20, -pi,0,0])
+			time.sleep(1)
 			_off()
 			time.sleep(1)
-			tutorial.go_to_pose_goal([1,0,0.7, -pi/2,0,0])
+			tutorial.go_to_pose_goal([1,0,0.75, -pi,0,0])
 		
 	except rospy.ROSInterruptException:
 		return

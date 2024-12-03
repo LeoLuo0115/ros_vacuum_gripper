@@ -10,7 +10,7 @@
   <!-- Start Gazebo paused to allow the controllers to pickup the initial pose -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch" pass_all_args="true">
     <arg name="paused" value="true"/>
-    <arg name="world_name" value="/home/leoluo0115/ros_ws/src/vacuum_config/world/my_world_v2.world"/>
+    <arg name="world_name" value="/home/leoluo0115/ros_ws/src/vacuum_config/world/my_world_v3.world"/>
   </include>
 
   <!-- Set the robot urdf on the parameter server -->
